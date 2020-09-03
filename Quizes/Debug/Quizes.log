@@ -1,0 +1,3 @@
+﻿  Person.cpp
+F:\GitHub\Projects\Quizes\Quizes\Person.cpp(118): warning C4715: Person::filFile: значение возвращается не при всех путях выполнения
+  Quizes.vcxproj -> F:\GitHub\Projects\Quizes\Debug\Quizes.exe
