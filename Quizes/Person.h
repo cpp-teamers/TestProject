@@ -9,6 +9,7 @@ public:
 	void createTest();// вывод теста в файл 
 	void writeToCatalog(std::string name);
 	void readCatalog();
+	void readResult();
 	Test filFile(); // вся логика про прохождение тестов: выбор теста, оценка за тест и т.д.
 };
 
