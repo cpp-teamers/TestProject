@@ -11,7 +11,7 @@ void Menu::displayMenu()
 	std::cout << "\n  ``````````````````````````````````````````` ";
 	std::cout << "\n --> ";
 	std::cin >> choice;
-	if (choice < 1 || choice > 4) {
+	if (choice < 1 || choice > 3) {
 		std::cout << "\n> You input incorrect number! Try again. " << std::endl;
 	}
 	switch (choice)
@@ -23,7 +23,7 @@ void Menu::displayMenu()
 		Person::createTest();
 		break;
 	case 3:
-
+		Person::writeMarks();
 		break;
 	}
 

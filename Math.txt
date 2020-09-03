@@ -9,8 +9,8 @@ What is the y-intercept of the line that contains the points (3, 3) and (6,  1)?
 .7
 -8
 A car used 12 gallons of gasoline and traveled a total distance of 290 miles. The car’s fuel efficiency is 25 miles per gallon on the highway and 20 miles per gallon in the city. The variable h will represent the number of gallons used on the highway. Which equation could be used to find h?
-.25h + 20(12 – h) = 290
--25(12 – h) + 20h = 290
+.25h + 20(12 - h) = 290
+-25(12 - h) + 20h = 290
 -25(12 + h) + 20h = 290
 -25h + 20(12 + h) = 290
 An item sells for $20 per kilogram. What is the cost in cents per gram for this item?
@@ -24,7 +24,7 @@ John found the length of one side of a square to be sqrt(40) inches. Which is cl
 -about 10 inches
 -about 20 inches
 Line l and line k are perpendicular. Line l has a slope of 3. Line k contains the points (5, 8) and (2, y). What is the value of y?
--–1
+--1
 -7
 .9
 -17

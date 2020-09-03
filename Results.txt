@@ -5,11 +5,11 @@ Good! Correct answer.
 Who was the last Saxon king in England?
 Incorrect answer.
 Which British Prime Minister wrote “The History of the English Speaking People”?
-Good! Correct answer.
+Incorrect answer.
 Shakespeare mainly lived during the reign of
 Good! Correct answer.
 Where were Britain‘s first overseas colonies?
-Good! Correct answer.
+Incorrect answer.
 Who was Britain's Commander in Chief for Europe at the end of World War II?
 Incorrect answer.
 Where did Churchill first use the term “Iron Curtain” to describe the line between Communist Eastern and Democratic Western Europe?
@@ -24,5 +24,5 @@ Which of these British leaders has a bad reputation?
 Incorrect answer.
 
   _______________________
- | Your grade: 5 points. |
+ | Your grade: 3 points. |
   ```````````````````````

@@ -14,6 +14,7 @@ void Person::createTest()
     std::ofstream Fout;
     Fout.open(T);
     do {
+        system("cls");
         t.Answers.push_back(t.createTest());
         // Дальше пишем тест или нет
         std::cout << "\n> Will you continue make the test? (1-yes/0-no)  -> ";
@@ -23,9 +24,9 @@ void Person::createTest()
     // Уже непосредственно запись в файл
     std::for_each(t.Answers.begin(), t.Answers.end(), [&Fout](Answer& a) {
         Fout << a.question << std::endl;
-        Fout << "1 " << a.text1 << std::endl;
+        Fout << "." << a.text1 << std::endl;
         for (int i = 0; i < 3; i++) {
-            Fout << i + 2 << " " << a.textUncorrect[i] << std::endl;
+            Fout << "-" << a.textUncorrect[i] << std::endl;
         }
         });
     Fout.close();
@@ -57,9 +58,66 @@ void Person::readCatalog() // чтение з каталога
     fin.close();
 }
 
+void Person::readResult()
+{
+    std::cout << "\n> Your results:" << std::endl;
+
+    std::string question;
+    std::string answer;
+
+    std::ifstream fin;
+    fin.open("Results.txt");
+    while (!fin.eof())
+    {
+        question = "";
+        answer = "";
+        std::getline(fin, question);
+        std::getline(fin, answer);
+        std::cout << question << std::endl;
+        std::cout << answer << std::endl;
+    }
+    fin.close();
+}
+
+void Person::readMarks(int grades)
+{
+    std::ofstream fout;
+    fout.open("Marks.txt", std::ios_base::app);
+    fout << grades << std::endl;
+    fout.close();
+}
+
+void Person::writeMarks()
+{
+    std::ifstream fin;
+    fin.open("Marks.txt");
+
+    std::string mark;
+    double S = 0;
+    int counter = 0;
+    int num;
+
+    std::cout << "\n> Your grade -> ";
+    while (!fin.eof())
+    {
+        std::getline(fin, mark);
+        if (mark.empty()) {
+            break;
+        }
+        std::cout << mark << " ";
+        //
+        num = std::stoi(mark);
+        S = S + num;
+        counter++;
+    }
+    S = S / counter;
+    std::cout << "\n> Your average mark -> " << std::setprecision(2) << S;
+    fin.close();
+}
+
 Test Person::filFile()
 {
-    // Чтение файла - работает как пушечка)
+    // Чтение файла
     readCatalog();
     std::cout << "\n> Write the test, which you want to pass(all characters and ducks) ->";
     std::string txt;
@@ -91,8 +149,13 @@ Test Person::filFile()
     {
         while (!fin.eof())
         {
+            i++;
+            system("cls");
             std::getline(fin, question);
-            std::cout << "\n>" << question << std::endl;
+
+            if (question.empty()) { break; }
+
+            std::cout << "\n " << i << ". " << question << std::endl;
             counter = 0;
             for (int i = 0; i < 4; i++)
             {
@@ -123,14 +186,16 @@ Test Person::filFile()
             else {
                 fout << "Incorrect answer." << std::endl;
             }
-            // 
-            i++;
         }
+
         fout << "\n  _______________________";
         fout << "\n | Your grade: " << grade << " points. |";
         fout << "\n  ```````````````````````";
         fin.close();
         fout.close();
+
+        readResult(); // Вывод на экран результата
+        readMarks(grade); // Считывание оценок в отдельный файл
         return t;
     }
     else {
