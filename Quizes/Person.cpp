@@ -57,6 +57,27 @@ void Person::readCatalog() // чтение з каталога
     fin.close();
 }
 
+void Person::readResult()
+{
+    std::cout << "\n> Your results:" << std::endl;
+
+    std::string question;
+    std::string answer;
+
+    std::ifstream fin;
+    fin.open("Result.txt");
+    while (!fin.eof())
+    {
+        question = "";
+        answer = "";
+        std::getline(fin, question);
+        std::getline(fin, answer);
+        std::cout << question << std::endl;
+        std::cout << answer << std::endl;
+    }
+    fin.close();
+}
+
 Test Person::filFile()
 {
     // Чтение файла - работает как пушечка)
